@@ -17,6 +17,17 @@ def main():
     print('------------------------------------------')
     print(" ")
     
+    # Dictionary of Translatative References
+    jerichoDict = {
+  " ": "<>",
+  "q": "и",
+  "Q": "и",
+  "W": "文",
+  "w": "文",
+  "E": "يا",
+  "e": "يا"
+    }
+    
     # Alias Selection Prompt
     userAlias = input("Hello! Welcome to the Jericho Secret Message Translator. What alias would you like to use?")
     print(" ")
@@ -32,10 +43,17 @@ def main():
     
     if initialQuestion == "1":
         encodeInput = input("Type or copy and paste the message you would like to encode.")
-        encodeOutput = 
-        print()
+        print(" ")
+        encodeOutput = ""
+        for i in encodeInput:
+            encodeOutput = encodeOutput + jerichoDict[i]
+        print("Here is your encoded message: " + encodeOutput)
         
     if initialQuestion == "2":
         decodeInput = input("Type or copy and paste the message you would like to decode.")
+        decodeOutput = ""
+        for i in decodeInput:
+            decodeOutput = decodeOutput + jerichoDict[i]
+        print("Here is your decoded message: " + decodeOutput)
     
 main()
